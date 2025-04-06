@@ -12,7 +12,7 @@ function App() {
     setError(null);
     setComparisonResult(null);
 
-    const response = await fetch('http://127.0.0.1:5000/compare_decks', {
+    const response = await fetch('https://mtg-deck-comparator.onrender.com/compare_decks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ deck_a_url: deckAUrl, deck_b_url: deckBUrl }),
