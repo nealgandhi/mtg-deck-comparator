@@ -1,5 +1,6 @@
 import re
 import cloudscraper
+import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS  # Import CORS
 
@@ -82,6 +83,7 @@ def compare():
 def hello_world():
     return 'Hello, World!'
 
-# # Run the Flask app
-# if __name__ == '__main__':
-#     app.run(debug=True)
+# Run the Flask app
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))  # Use the PORT env var, default to 5000 for local dev
+    app.run(host='0.0.0.0', port=port)
